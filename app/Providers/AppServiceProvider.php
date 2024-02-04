@@ -2,6 +2,10 @@
 
 namespace App\Providers;
 
+use App\Http\Interfaces\IOrder;
+use App\Http\Interfaces\IProduct;
+use App\Http\Repositories\OrderRepository;
+use App\Http\Repositories\ProductRepository;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +17,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        
     }
 
     /**
@@ -23,6 +27,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $this->app->bind(IOrder::class, OrderRepository::class);
+        $this->app->bind(IProduct::class, ProductRepository::class);
+        
     }
 }

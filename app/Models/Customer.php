@@ -5,14 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Product extends Model
+class Customer extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
-    
-    /**
-     * Get the user associated with the Product
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
-     */
+
+    protected $dates = [
+        "since"
+    ];
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
 }

@@ -79,7 +79,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"customerId\": 3,\n\t\"items\": [\n\t{\n\t\t\"productId\": 102,\n\t\t\"quantity\": 6,\n\t\t\"unitPrice\": \"11.28\",\n\t\t\"total\": \"67.68\"\n\t},\n\t{\n\t\t\"productId\": 100,\n\t\t\"quantity\": 10,\n\t\t\"unitPrice\": \"120.75\",\n\t\t\"total\": \"1207.50\"\n\t}],\n\t\"total\": \"1275.18\"\n}",
+					"raw": "{\n\t\"customer_id\": 3,\n\t\"items\": [\n\t{\n\t\t\"product_id\": 102,\n\t\t\"quantity\": 6,\n\t\t\"unitPrice\": \"11.28\",\n\t\t\"total\": \"67.68\"\n\t},\n\t{\n\t\t\"product_id\": 100,\n\t\t\"quantity\": 10,\n\t\t\"unitPrice\": \"120.75\",\n\t\t\"total\": \"1207.50\"\n\t}],\n\t\"total\": \"1275.18\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -109,7 +109,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"name\": \"Schneider Asfora Beyaz\",\n\t\"category\": 2,\n\t\"price\": \"12.95\",\n\t\"stock\": 10\n}",
+					"raw": "{\n\t\"name\": \"Schneider Asfora Beyaz\",\n\t\"category_id\": 2,\n\t\"price\": \"12.95\",\n\t\"quantity\": 10\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -117,7 +117,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8090/api/v1/product",
+					"raw": "http://localhost:8090/api/v1/product/create",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -126,7 +126,8 @@
 					"path": [
 						"api",
 						"v1",
-						"product"
+						"product",
+						"create"
 					]
 				}
 			},

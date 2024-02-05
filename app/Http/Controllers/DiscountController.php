@@ -26,9 +26,9 @@ class DiscountController extends Controller
 		return $this->repository->findOrFail($id);
 	}
 
-	public function calculateDiscounts($order_id)
+	public function calculateDiscounts($orderId)
 	{
-		$order = $this->getOrder($order_id);
+		$order = $this->getOrder($orderId);
 		$discounts = DiscountRule::orderBy('priority', 'desc')->get();
 		$appliableDiscounts = [];
 

@@ -27,6 +27,10 @@ class OrderController extends Controller
         return Order::collection($this->repository->all());
     }
 
+    public function show($orderId){
+        return $this->repository->findOrFail($orderId);
+    }
+
     public function store(OrderRequest $request)
     {
         $data = $request->validated();
@@ -73,9 +77,9 @@ class OrderController extends Controller
         return Order::collection($this->repository->searchOrder($order->id));
     }
 
-    public function destroy($id)
+    public function destroy($orderId)
     {
-        return $this->repository->delete($id);
+        return $this->repository->delete($orderId);
     }
 
 }

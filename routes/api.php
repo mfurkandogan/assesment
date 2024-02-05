@@ -30,8 +30,12 @@ Route::group(['domain' => env('APP_URL')], function () {
             Route::post('/create', [ProductController::class, 'create'])->name('product.create');
         });
 
-        Route::apiResource('order', OrderController::class);
+        Route::post('/order',[OrderController::class,'store'])->name('order.store');
+        Route::get('/orders',[OrderController::class,'index'])->name('order.index');
+        Route::get('/order/{orderId}',[OrderController::class,'show'])->name('order.show');
+        Route::delete('/order/{orderId}',[OrderController::class,'destroy'])->name('order.destroy');
 
-        Route::get('discount/{order_id}', [DiscountController::class, 'calculateDiscounts']);
+
+        Route::get('discount/{orderId}', [DiscountController::class, 'calculateDiscounts']);
     });
 });

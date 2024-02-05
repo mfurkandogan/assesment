@@ -27,3 +27,7 @@ Finally, run this command to create db tables and import demo data:
 docker exec -it ideasoftassesment php artisan migrate --seed
 ```
 
+
+## NOTE : Endpoint Test Collection
+
+Postman Collection (ideasoft_assesment.postman_collection.json) is in the main folder.
